@@ -28,7 +28,7 @@ class TestApp:
         species_ul = re.compile(r'\<ul\>[Ss]pecies.+')
         
         response = app.test_client().get('/animal/1')
-
+        
         assert(len(name_ul.findall(response.data.decode())) == 1)
         assert(len(species_ul.findall(response.data.decode())) == 1)
 
